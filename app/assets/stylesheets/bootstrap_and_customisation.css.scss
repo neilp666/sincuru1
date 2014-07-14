@@ -1,0 +1,40 @@
+$jumbotron-bg:                                         white;
+@import 'bootstrap';
+
+
+h1
+	{color: white;
+	font-family: 'Helvetica Neue', Helvetica;
+	font-weight: 200;
+	font-size: 70px;
+	margin: 0px;
+
+}
+
+p { 
+	font-family: 'Helvetica Neue', Helvetica;
+	font-weight: 200px;
+
+}
+
+
+/* Custom page footer */
+.jumbotron {
+  text-align: center;
+}
+
+.footer {
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  
+}
+
+
+.jumbotron .btn {
+  padding: 14px 24px;
+  font-size: 21px;
+}
