@@ -1,11 +1,10 @@
 <h1>Listing listings</h1>
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Name</th>
       <th>Description</th>
-      <th>Text</th>
       <th>Price</th>
       <th></th>
       <th></th>
@@ -18,10 +17,13 @@
       <tr>
         <td><%= listing.name %></td>
         <td><%= listing.description %></td>
-        <td><%= listing.price %></td>
+        <td><%= number_to_currency(listing.price) %></td>
+        <td><%= "Sold by #{listing.user.name}" %></td>
+        <% if (user_signed_in?) && (current_user == listing.user) %>
         <td><%= link_to 'Show', listing %></td>
         <td><%= link_to 'Edit', edit_listing_path(listing) %></td>
         <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -29,4 +31,6 @@
 
 <br>
 
-<%= link_to 'New Listing', new_listing_path %>
+<% if user_signed_in? %>
+    <%= link_to 'New Listing', new_listing_path, class: "btn btn-link" %>
+<% end %>
